@@ -169,5 +169,9 @@ palette.prototype.polyStar=function(x1,y1,x2,y2){
 }
 palette.prototype.clear=function(){
 	this.o.clearRect(0,0,this.width,this.height);
+	this.status.push(this.o.getImageData(0,0,this.width,this.height));
+	if(this.status.length>0){
+		this.o.putImageData(this.status[this.status.length-1],0,0,0,0,this.width,this.height);
+	}
 	// this.status=null;
 }
