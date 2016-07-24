@@ -52,7 +52,8 @@ divs.click(function(){
 		// palt=new palette(canvas[0].getContext("2d"),canvas[0],copy[0]);
 	}
 	if(role=="save"){
-
+		var a=canvas[0].toDataURL();
+		location.href=a.replace('image/jpg','image/octet-stream')
 	}
 	if(role=="clear"){
 		palt.clear();
